@@ -18,6 +18,8 @@
 #include <AR_Motors/AP_MotorsUGV.h>
 #include <AP_CheckFirmware/AP_CheckFirmware.h>
 #include <GCS_MAVLink/GCS.h>
+#include <MyFeature/MyFeature.h>
+
 #if CONFIG_HAL_BOARD == HAL_BOARD_CHIBIOS
 #include <AP_HAL_ChibiOS/sdcard.h>
 #include <AP_HAL_ChibiOS/hwdef/common/stm32_util.h>
@@ -422,6 +424,11 @@ void AP_Vehicle::setup()
 
     // init_ardupilot is where the vehicle does most of its initialisation.
     init_ardupilot();
+    MyFeature myFeature;
+    myFeature.begin();
+    //Test Bereich CiS
+    //hal.console->printf("Hallo CiS Von HAL\n");
+    //gcs().send_text(MAV_SEVERITY_INFO,"Hallo CiS von GCS\n");
 
 #if AP_SCRIPTING_ENABLED
     scripting.init();
