@@ -1,0 +1,2 @@
+def build(bld):
+    bld(features='cxx', source=['MyFeature.cpp'], includes=['.'], name='MyFeature')
