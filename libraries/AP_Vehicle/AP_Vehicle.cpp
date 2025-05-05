@@ -4,7 +4,6 @@
 
 #include "AP_Vehicle.h"
 #include <AP_InertialSensor/AP_InertialSensor_rate_config.h>
-
 #include <AP_BLHeli/AP_BLHeli.h>
 #include <AP_Common/AP_FWVersion.h>
 #include <AP_Arming/AP_Arming.h>
@@ -424,9 +423,10 @@ void AP_Vehicle::setup()
 
     // init_ardupilot is where the vehicle does most of its initialisation.
     init_ardupilot();
-    MyFeature myFeature;
-    myFeature.begin();
+   
     //Test Bereich CiS
+    MyFeature myFeature;
+    myFeature.init();
     //hal.console->printf("Hallo CiS Von HAL\n");
     //gcs().send_text(MAV_SEVERITY_INFO,"Hallo CiS von GCS\n");
 
